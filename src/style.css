@@ -1,0 +1,25 @@
+/** COMMON CSS STARTS HERE */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6,ul,p,span,ol{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "arial";
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/** COMMON CSS ENDS HERE */
