@@ -3,20 +3,24 @@ import Btn from "./Btn";
 import { FiEdit } from "react-icons/fi";
 import { AiOutlineDelete } from "react-icons/ai";
 
-const Todo = ({todo, index}) => {
-  
+const Todo = ({ todo, index, deleteTodo, handleEdit }) => {
   return (
     <div className="card shadow p-3 mb-2">
       <div className="row">
         <div className="col-8">
-          <h5>{++index}. {todo}</h5>
+          <h5>
+            {++index}. {todo}
+          </h5>
         </div>
         <div className="col-4 text-end">
           <div className="btn-group">
-            <Btn className='btn-sm btn-warning'>
+            <Btn onClick={()=> handleEdit(--index)} className="btn-sm btn-warning">
               <FiEdit />
             </Btn>
-            <Btn className='btn-sm btn-danger'>
+            <Btn
+              onClick={() => deleteTodo(--index)}
+              className="btn-sm btn-danger"
+            >
               <AiOutlineDelete />
             </Btn>
           </div>

@@ -1,9 +1,9 @@
 import React from 'react'
 
 
-const Btn = ({children, className}) => {
+const Btn = ({children, className, ...params}) => {
   return (
-    <button className={`btn btn-primary ${className}`}>{children}</button>
+    <button {...params} className={`btn btn-primary ${className}`}>{children}</button>
   );
 }
 

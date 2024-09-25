@@ -5,12 +5,23 @@ import "./todo.css";
 import TodoLists from "./components/TodoLists";
 
 const App = () => {
-  const [todos, setTodos] = useState(["To do HW", "Test todo"]);
-    
+  const [todos, setTodos] = useState([]);
+  //* SELECTED INPUT
+   const [input, setInput] = useState("");
+  //* STORE INDEX
+  const [index, setIndex] = useState(null);
+
+
+  //* todo edit
+  const handleEdit = (index) =>{
+    setInput(todos[index]);
+    setIndex(index)
+  }
+
   return (
     <div className="wrapper">
-      <AddTodo setTodos={setTodos} />
-      <TodoLists todos={todos} />
+      <AddTodo setIndex={setIndex} todos={todos} index={index} input={input} setInput={setInput} setTodos={setTodos} />
+      <TodoLists handleEdit={handleEdit} setTodos={setTodos} todos={todos} />
     </div>
   );
 };
